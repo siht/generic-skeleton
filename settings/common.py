@@ -58,10 +58,12 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'urls'
 
+MAIN_TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [MAIN_TEMPLATE_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -81,6 +83,8 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'djangobower.finders.BowerFinder',
 )
+
+BOWER_COMPONENTS_ROOT = os.path.join(BASE_DIR,'components')
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
