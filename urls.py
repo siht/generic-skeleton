@@ -21,8 +21,9 @@ urlpatterns = [
 ]
 
 if settings.DEBUG:
-    import helpers
+    from helpers import views as helper_views
     urlpatterns += [
+        url(r'^templates/(?P<template_name>[\w\-]+\.html)/$', helper_views.MytemplateView.as_view(), name='template_testing')
     ]
 else:
     from django.conf.urls.static import static
