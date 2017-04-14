@@ -37,6 +37,12 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'djangobower',
+)
+
+BOWER_INSTALLED_APPS = (
+    'jquery#1.9',
+    'underscore',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -70,6 +76,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'wsgi.application'
 
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'djangobower.finders.BowerFinder',
+)
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
