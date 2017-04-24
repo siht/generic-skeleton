@@ -1,4 +1,4 @@
-from common import *
+from settings.common import *
 
 LANGUAGE_CODE = 'es-mx'
 
