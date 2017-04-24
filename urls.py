@@ -23,7 +23,7 @@ urlpatterns = [
 if settings.DEBUG:
     from helpers import views as helper_views
     urlpatterns += [
-        url(r'^templates/(?P<template_name>[\w\-_]+)/$', helper_views.MytemplateView.as_view(), name='template_testing')
+        url(ur'^templates/(?P<template_name>[\w\-_/]+)$', helper_views.TemplateViewer.as_view(), name='template_testing')
     ]
 else:
     from django.conf.urls.static import static
