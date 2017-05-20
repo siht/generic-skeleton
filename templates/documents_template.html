@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+{% block base_css %}
+<style type="text/css">
+{% comment %}
+me basé en este documento
+https://www.smashingmagazine.com/2015/01/designing-for-print-with-css/
+{% endcomment %}
+@page{
+	size: letter;
+	margin: 2cm;
+	@bottom-right {
+    	content: counter(page) de counter(pages);
+  	}
+}
+
+.break {
+	page-break-before: always
+}
+</style>
+{% endblock base_css %}
+{% block css %}
+{% endblock css %}
+</head>
+<body>
+{% block content %}
+{% endblock content %}
+</body>
+</html>
